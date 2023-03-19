@@ -3,7 +3,10 @@
             [re-frame.core :as rf]
             ["@mui/material/styles" :refer [createTheme ThemeProvider]] 
             [devtools.core :as devtools]
-            [cljs-re-re-template.views :as views]))
+            [cljs-re-re-template.views :as views]
+            [cljs-re-re-template.db]
+            [cljs-re-re-template.handlers]
+            [cljs-re-re-template.subs]))
 
 (defn install-devtools [] ; this is used to invert cljs console colors so it's actually readable in dark mode
   (let [{:keys [cljs-land-style]} (devtools/get-prefs)]

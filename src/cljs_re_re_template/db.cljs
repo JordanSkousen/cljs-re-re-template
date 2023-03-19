@@ -1,4 +1,4 @@
-(ns cljs_re_re_template.db
+(ns cljs-re-re-template.db
   (:require [re-frame.core :refer [reg-event-fx]]))
 
 (defn initial-db []

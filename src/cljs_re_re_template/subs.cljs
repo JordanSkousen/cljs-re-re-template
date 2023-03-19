@@ -1,2 +1,2 @@
-(ns cljs_re_re_template.subs
+(ns cljs-re-re-template.subs
   (:require [re-frame.core :refer [reg-sub]]))

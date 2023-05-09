@@ -15,6 +15,6 @@ Then, in your favorite editor, perform a Find and Replace In All Files for:
 - `cljs_re_re_template`
 Replacing each with your project's name. Also be sure to rename the folder `src\cljs_re_re_template`.
 
-Start the dev server with `yarn start`, and build it with `yarn build`.
+Start the dev server with `yarn start` *(don't forget to run `yarn install` first!)*, and build it with `yarn build`.
 
 After that, you're on your own. Bye!

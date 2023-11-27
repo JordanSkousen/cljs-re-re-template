@@ -1,0 +1,108 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+o o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Connecting ...
+; Reading port file: file:///c%3A/Users/Jordan/source/repos/TV_vs_OG/.nrepl-port ...
+; No nrepl port file found.
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+nil
+clj꞉shadow.user꞉>  ; Use `alt+enter` to evaluate
+clj꞉shadow.user꞉> 
+; Creating cljs repl session...
+; Connecting cljs repl: deps.edn + shadow-cljs...
+;   The Calva Connection Log might have more connection progress information.
+; Starting cljs repl for: deps.edn + shadow-cljs...
+; Cljs builds started
+; Connected session: cljs, repl: :browser
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+(try (require '[cljs.repl :refer [apropos dir doc find-doc print-doc pst source]]) (catch :default e (js/console.warn "Failed to require cljs.repl utilities:" (.-message e))))
+nil
+cljs꞉user꞉>  ; Use `alt+enter` to evaluate
+(let [chosen-albums ["Fearless"]]
+  (->> data
+       seq
+       (filter (fn [[key]]
+                 (some #{key} chosen-albums)))
+       (map (fn [[album-name {:keys [og-id tv-id tracks]}]]
+              (->> tracks
+                   seq
+                   (map (fn [[og-track-id tv-track-id]]
+                          {:album-name album-name
+                           :og-id og-track-id
+                           :tv-id tv-track-id
+                           :og-album-id og-id
+                           :tv-album-id tv-id})))))
+       flatten))
+({:album-name "Fearless", :og-id "6S9G7J3EB1ZY0rrZPwsBg5", :tv-id "7HC7R2D8WjXVcUHJyEGjRs", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "3as6Wz3mwbTnusWhZjTUNr", :tv-id "1qrpoAMXodY6895hGKoUpA", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "46HGgtwmmuEB8mvDCyjyAc", :tv-id "01QdEx6kFr78ZejhQtWR5m", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "4pl5zcqCv4vc3cB7M4MZ6f", :tv-id "1n2wszmJyVkw6FHqyLnQsY", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "0RdcBnAXyH2YZZvcBVu2k6", :tv-id "3ExweHKZF9B752DPQByRVT", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "0kN3oXYWWAk1uC0y2WoyOE", :tv-id "6YvqWjhGD8mB5QXcbcUKtx", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "4jPtq9shRdUv8Zjr0a5xkD", :tv-id "5YL553x8sHderRBDlm3NM3", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "14Bljc3pOOG0xQX3wqhLN9", :tv-id "51A8eKvvZz9uydvIZ7xRSV", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "6HWYtS215rxaaMjvpyG18W", :tv-id "6iiAfo4wTA2CVC3Uwx9uh8", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "0xvsgzM8AtBtRHZm5rav8A", :tv-id "1cSFlSBdpT4F5vb1frQ231", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "08gavXombT6KR0af88i9tA", :tv-id "2m3ObD945KvpE5y9A1eUWm", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "1zxrcAk6eiytfavqriMcKT", :tv-id "1msEuwSBneBKpVCZQcFTsU", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "6wcFdMmiDscAhZJrcVFumx", :tv-id "550erGcdD9n6PnwxrvYqZT", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "3M0w3fhdXByHLCNAoi5c9G", :tv-id "2nqio0SfWg6gh2eCtfuMa5", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "4XrP7vKBjKLEYlRZdb0Ygr", :tv-id "0k0vFacOHNuArLWMiH60p7", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "5YbZZ2gYfvW1UvHHF4pVaD", :tv-id "6ON9UuIq49xXY9GPmHIYRp", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "3F6czr26ZwGU5O5CHY04Ma", :tv-id "77sMIMlNaSURUAXq5coCxE", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "77VotUUL79U10TAnYdqwvr", :tv-id "22bPsP2jCgbLUvh82U0Z3M", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "2IZ00ed83ygPIiacYScWUE", :tv-id "0tQ9vBYpldCuikPsbgOVKA", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"})
+cljs꞉tv-vs-og.data꞉> 
+(let [chosen-albums ["Fearless" "1989"]]
+  (->> data
+       seq
+       (filter (fn [[key]]
+                 (some #{key} chosen-albums)))
+       (map (fn [[album-name {:keys [og-id tv-id tracks]}]]
+              (->> tracks
+                   seq
+                   (map (fn [[og-track-id tv-track-id]]
+                          {:album-name album-name
+                           :og-id og-track-id
+                           :tv-id tv-track-id
+                           :og-album-id og-id
+                           :tv-album-id tv-id})))))
+       flatten))
+({:album-name "Fearless", :og-id "6S9G7J3EB1ZY0rrZPwsBg5", :tv-id "7HC7R2D8WjXVcUHJyEGjRs", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "3as6Wz3mwbTnusWhZjTUNr", :tv-id "1qrpoAMXodY6895hGKoUpA", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "46HGgtwmmuEB8mvDCyjyAc", :tv-id "01QdEx6kFr78ZejhQtWR5m", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "4pl5zcqCv4vc3cB7M4MZ6f", :tv-id "1n2wszmJyVkw6FHqyLnQsY", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "0RdcBnAXyH2YZZvcBVu2k6", :tv-id "3ExweHKZF9B752DPQByRVT", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "0kN3oXYWWAk1uC0y2WoyOE", :tv-id "6YvqWjhGD8mB5QXcbcUKtx", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "4jPtq9shRdUv8Zjr0a5xkD", :tv-id "5YL553x8sHderRBDlm3NM3", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "14Bljc3pOOG0xQX3wqhLN9", :tv-id "51A8eKvvZz9uydvIZ7xRSV", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "6HWYtS215rxaaMjvpyG18W", :tv-id "6iiAfo4wTA2CVC3Uwx9uh8", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "0xvsgzM8AtBtRHZm5rav8A", :tv-id "1cSFlSBdpT4F5vb1frQ231", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "08gavXombT6KR0af88i9tA", :tv-id "2m3ObD945KvpE5y9A1eUWm", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "1zxrcAk6eiytfavqriMcKT", :tv-id "1msEuwSBneBKpVCZQcFTsU", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "6wcFdMmiDscAhZJrcVFumx", :tv-id "550erGcdD9n6PnwxrvYqZT", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "3M0w3fhdXByHLCNAoi5c9G", :tv-id "2nqio0SfWg6gh2eCtfuMa5", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "4XrP7vKBjKLEYlRZdb0Ygr", :tv-id "0k0vFacOHNuArLWMiH60p7", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "5YbZZ2gYfvW1UvHHF4pVaD", :tv-id "6ON9UuIq49xXY9GPmHIYRp", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "3F6czr26ZwGU5O5CHY04Ma", :tv-id "77sMIMlNaSURUAXq5coCxE", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "77VotUUL79U10TAnYdqwvr", :tv-id "22bPsP2jCgbLUvh82U0Z3M", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "2IZ00ed83ygPIiacYScWUE", :tv-id "0tQ9vBYpldCuikPsbgOVKA", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "1989", :og-id "3fthfkkvy9av3q3uAGVf7U", :tv-id "50yNTF0Od55qnHLxYsA5Pw", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "6Nde5KuTXyB7jlPO4upaBo", :tv-id "1OcSfkeCg9hRC2sFKB4IMJ", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "0yN4fNzmVnmgC0dsOoi9Wh", :tv-id "7oZONwFiFIErZcXAtTu7FY", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "0lmMtDQ2ElasKU2qDAE6NN", :tv-id "2k0ZEeAqzvYMcx9Qt5aClQ", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "6wfugRLamFsTRbPcCpNnP7", :tv-id "733OhaXQIHY7BKtY3vnSkn", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "6iWMI5oOhWrDbLbjmwTWFq", :tv-id "6HRsJu8vcnzYDN4t0570FY", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "1fo2ctLqj3zBhRQKOXprol", :tv-id "3Vpk1hfMAQme8VJ0SNRSkd", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "6rZVy6FIG7lSJQMFXHo12z", :tv-id "5M787RexsAiVYjQusM98CV", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "6xsEAm6w9oMQYYg3jkEkMT", :tv-id "6qAcApH8obo8eqatCKUHd9", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "2sC2P3BN0IXujNaaSyDmtP", :tv-id "0108kcWLnn2HlH2kedi1gn", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "4bXCcoesMt8u99xMsbLr9U", :tv-id "0lKUBmEyQfzsQHozyeXzES", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "4A2LfnduSTsE8u0ecYROxE", :tv-id "0TyGh27YQ5LknmiDhCzJiT", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "33Kq0AT5rvwyE4azisG08x", :tv-id "4WUepByoeqcedHoYhSNHRt", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "1kTPQnabROVkW9bUXdCGrB", :tv-id "4WBEj8TeGtRPNJdOmT3WJW", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "1B5VzXPqMlvRw0U4HJY3dJ", :tv-id "3FxJDucHWdw6caWTKO5b23", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "2zfgVd034GlUvk7LqBHl6u", :tv-id "1ULabO0PEsdJekqVH6G10G", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "106R7Z57WYzBAfrXImV30y", :tv-id "27exgla7YBw9DUNNcTIpjy", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"})
+cljs꞉tv-vs-og.data꞉> 
+(let [chosen-albums ["Fearless" "1989"]]
+  (->> data
+       seq
+       (filter (fn [[key]]
+                 (some #{key} chosen-albums)))
+       (map (fn [[album-name {:keys [og-id tv-id tracks]}]]
+              (->> tracks
+                   seq
+                   (map (fn [[og-track-id tv-track-id]]
+                          {:album-name album-name
+                           :og-id og-track-id
+                           :tv-id tv-track-id
+                           :og-album-id og-id
+                           :tv-album-id tv-id})))))
+       flatten
+       (take 10)))
+({:album-name "Fearless", :og-id "6S9G7J3EB1ZY0rrZPwsBg5", :tv-id "7HC7R2D8WjXVcUHJyEGjRs", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "3as6Wz3mwbTnusWhZjTUNr", :tv-id "1qrpoAMXodY6895hGKoUpA", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "46HGgtwmmuEB8mvDCyjyAc", :tv-id "01QdEx6kFr78ZejhQtWR5m", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "4pl5zcqCv4vc3cB7M4MZ6f", :tv-id "1n2wszmJyVkw6FHqyLnQsY", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "0RdcBnAXyH2YZZvcBVu2k6", :tv-id "3ExweHKZF9B752DPQByRVT", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "0kN3oXYWWAk1uC0y2WoyOE", :tv-id "6YvqWjhGD8mB5QXcbcUKtx", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "4jPtq9shRdUv8Zjr0a5xkD", :tv-id "5YL553x8sHderRBDlm3NM3", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "14Bljc3pOOG0xQX3wqhLN9", :tv-id "51A8eKvvZz9uydvIZ7xRSV", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "6HWYtS215rxaaMjvpyG18W", :tv-id "6iiAfo4wTA2CVC3Uwx9uh8", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "0xvsgzM8AtBtRHZm5rav8A", :tv-id "1cSFlSBdpT4F5vb1frQ231", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"})
+cljs꞉tv-vs-og.data꞉> 
+(let [chosen-albums ["Fearless" "1989"]]
+  (->> data
+       seq
+       (filter (fn [[key]]
+                 (some #{key} chosen-albums)))
+       (map (fn [[album-name {:keys [og-id tv-id tracks]}]]
+              (->> tracks
+                   seq
+                   (map (fn [[og-track-id tv-track-id]]
+                          {:album-name album-name
+                           :og-id og-track-id
+                           :tv-id tv-track-id
+                           :og-album-id og-id
+                           :tv-album-id tv-id})))))
+       flatten
+       shuffle
+       (take 10)))
+({:album-name "1989", :og-id "6iWMI5oOhWrDbLbjmwTWFq", :tv-id "6HRsJu8vcnzYDN4t0570FY", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "1989", :og-id "0lmMtDQ2ElasKU2qDAE6NN", :tv-id "2k0ZEeAqzvYMcx9Qt5aClQ", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "Fearless", :og-id "2IZ00ed83ygPIiacYScWUE", :tv-id "0tQ9vBYpldCuikPsbgOVKA", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "0kN3oXYWWAk1uC0y2WoyOE", :tv-id "6YvqWjhGD8mB5QXcbcUKtx", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "46HGgtwmmuEB8mvDCyjyAc", :tv-id "01QdEx6kFr78ZejhQtWR5m", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "1989", :og-id "4A2LfnduSTsE8u0ecYROxE", :tv-id "0TyGh27YQ5LknmiDhCzJiT", :og-album-id "34OkZVpuzBa9y40DCy0LPR", :tv-album-id "1o59UpKw81iHR0HPiSkJR0"} {:album-name "Fearless", :og-id "77VotUUL79U10TAnYdqwvr", :tv-id "22bPsP2jCgbLUvh82U0Z3M", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "08gavXombT6KR0af88i9tA", :tv-id "2m3ObD945KvpE5y9A1eUWm", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "6HWYtS215rxaaMjvpyG18W", :tv-id "6iiAfo4wTA2CVC3Uwx9uh8", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"} {:album-name "Fearless", :og-id "5YbZZ2gYfvW1UvHHF4pVaD", :tv-id "6ON9UuIq49xXY9GPmHIYRp", :og-album-id "43OpbkiiIxJO8ktIB777Nn", :tv-album-id "4hDok0OAJd57SGIT8xuWJH"})
+cljs꞉tv-vs-og.data꞉> 
+; nREPL Connection was closed

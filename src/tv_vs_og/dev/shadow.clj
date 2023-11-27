@@ -1,10 +1,10 @@
-(ns cljs_re_re_template.dev.shadow
+(ns tv_vs_og.dev.shadow
   (:require [shadow.cljs.devtools.api :as shadow]
             [clojure.string :as string]
             [clojure.edn :as edn]))
 
 ;; Run this with:
-;; npx shadow-cljs clj-run src.cljs_re_re_template.dev.shadow/watch
+;; npx shadow-cljs clj-run src.tv_vs_og.dev.shadow/watch
 
 (set! *warn-on-reflection* true)
 
@@ -20,7 +20,7 @@
                "npx")
              "sass" "--watch"
              "-I" "." ;; Optional: include project root as a Sass include path
-             "src/cljs_re_re_template/styles.scss:public/css/styles.css"]
+             "src/tv_vs_og/styles.scss:public/css/styles.css"]
         ;; Redirect stdin to process, so ctrl-c is seen by sass.
         ;; Also redirect output to stdout.
         builder (-> (ProcessBuilder. ^"[Ljava.lang.String;" (into-array String cmd))

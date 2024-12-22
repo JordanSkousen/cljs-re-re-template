@@ -12,9 +12,9 @@ A base template for a CLJS app that includes the following:
 
 2. Then, in your favorite editor, perform a Find and Replace In All Files for (replacing each with your project's name):
    - `cljs-re-re-template`
-   - `cljs-re-re-template`
+   - `cljs_re_re_template`
 
-3. Also be sure to rename the folder `src\cljs-re-re-template`.
+3. Also be sure to rename the folder `src\cljs_re_re_template`.
 
 4. Start the dev server with `yarn start` *(don't forget to run `yarn install` first!)*, and build it with `yarn build`.
 

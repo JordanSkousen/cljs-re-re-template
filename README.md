@@ -8,7 +8,7 @@ A base template for a CLJS app that includes the following:
 
 ## Get started
 
-1. To get started, clone this repo and rename it by running: `git clone https://github.com/JordanSkousen/cljs-re-re-template <your project name>`
+1. To get started, clone this repo and rename it by running: `git clone --dissociate https://github.com/JordanSkousen/cljs-re-re-template <your project name>`
 
 2. Then, in your favorite editor, perform a Find and Replace In All Files for (replacing each with your project's name):
    - `cljs-re-re-template`

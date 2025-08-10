@@ -16,6 +16,8 @@ A base template for a CLJS app that includes the following:
 
 3. Also be sure to rename the folder `src\cljs_re_re_template`.
 
-4. Start the dev server with `yarn start` *(don't forget to run `yarn install` first!)*, and build it with `yarn build`.
+4. Install dependencies with `yarn install`.
+
+5. Start the dev server with `yarn start`, and build it with `yarn build`.
 
 After that, you're on your own. Bye!

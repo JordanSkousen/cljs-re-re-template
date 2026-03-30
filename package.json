@@ -1,21 +1,21 @@
 {
   "name": "cljs-re-re-template",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "shadow-cljs": "2.22.2"
+    "shadow-cljs": "^3.3.7"
   },
   "scripts": {
     "start": "npx shadow-cljs clj-run cljs_re_re_template.dev.shadow/watch",
-    "clean-debug": "powershell rm -Recurse -Force ./public/js",
-    "build": "yarn clear-debug && shadow-cljs release browser"
+    "clean-debug": "npx rimraf ./public/js",
+    "build": "yarn clean-debug && shadow-cljs release browser"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/material": "^5.11.13",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sass": "^1.59.3"
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sass": "^1.98.0"
   }
 }

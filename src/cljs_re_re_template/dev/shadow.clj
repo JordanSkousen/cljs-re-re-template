@@ -1,7 +1,7 @@
+#_{:clj-kondo/ignore [:underscore-in-namespace]}
 (ns cljs_re_re_template.dev.shadow
-  (:require [shadow.cljs.devtools.api :as shadow]
-            [clojure.string :as string]
-            [clojure.edn :as edn]))
+  (:require [clojure.string :as string]
+            [shadow.cljs.devtools.api :as shadow]))
 
 ;; Run this with:
 ;; npx shadow-cljs clj-run src.cljs_re_re_template.dev.shadow/watch

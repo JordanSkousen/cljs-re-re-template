@@ -3,8 +3,11 @@
 A base template for a CLJS app that includes the following:
 - [reagent](https://github.com/reagent-project/reagent)
 - [re-frame](https://github.com/day8/re-frame)
+- [re-re-frame](https://github.com/JordanSkousen/re-re-frame)
+- [reitit](https://github.com/metosin/reitit)
 - [Material UI](https://github.com/mui/material-ui)
 - [Sass](https://sass-lang.com/)
+- [re-frame HTTP event handlers](src/cljs_re_re_template/http.cljs)
 
 ## Get started
 
@@ -16,8 +19,8 @@ A base template for a CLJS app that includes the following:
 
 3. Also be sure to rename the folder `src\cljs_re_re_template`.
 
-4. Install dependencies with `yarn install`.
+4. Install dependencies with `npm install`.
 
-5. Start the dev server with `yarn start`, and build it with `yarn build`.
+5. Start the dev server with `npm run start`, and build it with `npm run build`.
 
 After that, you're on your own. Bye!

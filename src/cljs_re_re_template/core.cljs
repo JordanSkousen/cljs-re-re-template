@@ -1,12 +1,12 @@
 (ns cljs-re-re-template.core
-  (:require [reagent.dom :as rdom]
-            [re-frame.core :as rf]
-            ["@mui/material/styles" :refer [createTheme ThemeProvider]] 
-            [devtools.core :as devtools]
+  (:require ["@mui/material/styles" :refer [createTheme ThemeProvider]]
+            [cljs-re-re-template.handlers :as handlers]
+            [cljs-re-re-template.router :refer [init-router!]]
+            [cljs-re-re-template.subs]
             [cljs-re-re-template.views :as views]
-            [cljs-re-re-template.db]
-            [cljs-re-re-template.handlers]
-            [cljs-re-re-template.subs]))
+            [devtools.core :as devtools]
+            [re-frame.core :as rf]
+            [reagent.dom :as rdom]))
 
 (defn install-devtools [] ; this is used to invert cljs console colors so it's actually readable in dark mode
   (let [{:keys [cljs-land-style]} (devtools/get-prefs)]
@@ -18,11 +18,12 @@
                                       :typography {:fontFamily "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif"}})))
 
 (defn ^:dev/after-load mount-root []
+  (init-router!)
   (rdom/render [:> ThemeProvider {:theme mui-theme}
                 [views/Main]] 
                (.getElementById js/document "app")))
 
 (defn init []
-  (rf/dispatch-sync [:initialize-db])
+  (rf/dispatch-sync [::handlers/initialize-db])
   (install-devtools)
   (mount-root))

@@ -94,7 +94,7 @@ importers:
         version: 4.2.0
     devDependencies:
       shadow-cljs:
-        specifier: ^3.3.7
+        specifier: ^3.4.11
         version: 3.4.11
 
 packages:
